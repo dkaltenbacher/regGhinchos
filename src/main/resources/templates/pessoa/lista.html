@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista Contato</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Telefone</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="item:${listaDePessoas}">
+				<td th:text="${item.id}"></td>
+				<td th:text="${item.nome}"></td>
+				<td th:text="${item.menssagem}"></td>
+			<td>
+				<a th:href="'/pessoa/remove/' + ${item.id}">Remover</a>
+				<a th:href="'/pessoa/editar/' + ${item.id}">Editar</a>
+			</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
